@@ -125,12 +125,11 @@ def main() -> int:
     # ------------------------------------------------------ create repos
     print(f"[1/5] Creating (or reusing) Space {repo_id} (sdk=docker, cpu-basic, {'private' if PRIVATE_SPACE else 'public'})…")
     url = api.create_repo(
-        repo_id=repo_id,
-        repo_type="space",
-        sdk="docker",
-        private=PRIVATE_SPACE,
-        exist_ok=True,
-        space_hardware="cpu-basic",
+    repo_id=repo_id,
+    repo_type="space",
+    space_sdk="docker",
+    private=True,
+    exist_ok=True,
     )
     print(f"      -> {url}")
 
